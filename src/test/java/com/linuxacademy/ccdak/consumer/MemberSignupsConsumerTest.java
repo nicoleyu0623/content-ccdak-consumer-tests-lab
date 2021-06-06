@@ -48,6 +48,7 @@ public class MemberSignupsConsumerTest {
         // Verify that the testHandleRecords writes the correct data to System.out
         // A text fixture called systemOutContent has already been set up in this class to capture System.out data.
         String topic = "member_signups";
+                                                                    // partion, offset, key
         ConsumerRecord<Integer, String> record = new ConsumerRecord<>(topic, 0, 1, 2, "ROSENBERG, WILLOW");
         Map<TopicPartition, List<ConsumerRecord<Integer, String>>> records = new LinkedHashMap<>();
         records.put(new TopicPartition(topic, 0), Arrays.asList(record));
